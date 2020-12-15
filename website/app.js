@@ -1,6 +1,6 @@
 /* Global Variables */
 const apiKey = "c9c7fbf170c4fc226fd4cf38288023e7";
-const baseURL = "https://api.openweathermap.org/data/2.5/weather?zip="//${zip_code}&appid=${apiKey}
+const baseURL = "https://api.openweathermap.org/data/2.5/weather?zip=";//${zip_code}&appid=${apiKey}
 // Create a new date instance dynamically with JS
 let d = new Date();
 let newDate = (d.getMonth() + 1) + '.' + d.getDate() + '.' + d.getFullYear();
@@ -65,9 +65,9 @@ const updateUI = async () => {
   const request = await fetch('/all');
   try {
     const projectData = await request.json()
-    document.getElementById('date').innerText = `today date is : ${projectData.date}`;
-    document.getElementById('temp').innerText = `weather : ${projectData.temp}`;
-    document.getElementById('content').innerText = `feeling : ${projectData.feelings}`;
+    document.getElementById('date').innerHTML = `today date is : ${projectData.date}`;
+    document.getElementById('temp').innerHTML = `weather : ${projectData.temp}`;
+    document.getElementById('content').innerHTML = `feeling : ${projectData.feelings}`;
   }
   catch (error) {
     console.log("error", error);
